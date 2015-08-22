@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Tarefas</title>
+    <style>
+        body {
+            font-family: Sans-serif;
+            color: #333;
+        }
+        #container{
+            width:960px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .erro {
+            color: #F44;
+        }
+
+        fieldset {
+            border: 3px double #333;
+            color: #000;
+            margin: 10px 0 0 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 0 0;
+        }
+
+        input[type=text],
+        textarea {
+            width: 100%;
+            border: 1px solid #333;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            float: right;
+            clear: both;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th {
+            background-color: #EEE;
+            font-size: 18px;
+        }
+
+        table td {
+            border-bottom: 1px solid #333;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<h1>Gerenciador de Tarefas</h1>
+<form>
+    <fieldset>
+        <legend>Nova Tarefa</legend>
+        <label>Tarefa: <input type="text" name="nome"/></label>
+        <label>Descrição (Opcional):<textarea name="descricao"></textarea></label>
+        <label>Prazo (Opcional):<textarea name="prazo"></textarea></label>
+        <fieldset>
+            <legend>Prioridade:</legend>
+            <label>
+                <input type="radio" name="prioridade" value="baixa" checked/>Baixa
+                <input type="radio" name="prioridade" value="media"/>Media
+                <input type="radio" name="prioridade" value="alta"/>Alta
+            </label>
+        </fieldset>
+        <label>Tarefa Concluída:<input type="checkbox" name="concluida" value="sim"/></label>
+        <input type="submit" value="Cadastrar"/>
+    </fieldset>
+</form>
+<table>
+    <tr>
+        <th>Tarefas</th>
+        <th>Descicao</th>
+        <th>Prazo</th>
+        <th>Prioridade</th>
+        <th>Concluida</th>
+    </tr>
+    <?php //para cada nova tarefa, é criado mais uma celula na tabela
+     foreach($lista_tarefas as $tarefa):
+        ?>
+        <tr>
+            <td><?php echo $tarefa['nome']; ?></td>
+            <td><?php echo $tarefa['descricao']; ?></td>
+            <td><?php echo $tarefa['prazo']; ?></td>
+            <td><?php echo $tarefa['prioridade']; ?></td>
+            <td><?php echo $tarefa['concluida']; ?></td>
+        </tr>
+    <?php endforeach;?>
+</table>
+</div>
+</body>
+</html>
