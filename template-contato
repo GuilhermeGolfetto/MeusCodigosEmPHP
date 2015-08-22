@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciador de Contatos</title>
+    <meta charset="UTF-8"/>
+    <style>
+        body {
+            font-family: Sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .erro {
+            color: #F44;
+        }
+
+        fieldset {
+            border: 3px double #333;
+            color: #000;
+            margin: 10px 0 0 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 0 0;
+        }
+
+        input[type=text],
+        textarea {
+            width: 100%;
+            border: 1px solid #333;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        input[type=number],
+        textarea {
+            width: 100%;
+            border: 1px solid #333;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        input[type=email],
+        textarea {
+            width: 100%;
+            border: 1px solid #333;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            border-radius: 5px;
+            float: left;
+            clear: both;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th {
+            background-color: #EEE;
+            font-size: 18px;
+        }
+
+        table td {
+            border-bottom: 1px solid #333;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<h1>Gerenciador de Contatos</h1>
+<form>
+    <fieldset>
+        <legend>Novo Contato</legend>
+        <label>Nome: <input type="text" name="cNome"/></label>
+        <label>Descrição (Opcional): <textarea name="cDescricao"></textarea> </label>
+        <label>Data de Nascimento:<input type="text" name="cData"/></label>
+        <label>Telefone: <input type="number" name="cTel"/></label>
+        <label>E-mail: <input type="email" name="cMail"/></label>
+        <label>Favorito: <input type="checkbox" name="cFavorito" value="sim"/></label>
+        <input type="submit" value="Cadastrar"/>
+    </fieldset>
+</form>
+<table>
+    <tr>
+        <th>Contato</th>
+        <th>Descricao</th>
+        <th>Data de Nascimento</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Favorito</th>
+    </tr>
+
+    <?php foreach($lista_nomes as $contato):;?>
+    <tr>
+        <td><?php echo $contato['nome']; ?></td>
+        <td><?php echo $contato['descricao']; ?></td>
+        <td><?php echo $contato['data']; ?></td>
+        <td><?php echo $contato['telefone']; ?></td>
+        <td><?php echo $contato['email']; ?></td>
+        <td><?php echo $contato['favorito']; ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+</body>
+</html>
