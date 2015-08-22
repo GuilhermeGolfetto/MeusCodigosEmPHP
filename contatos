@@ -1,0 +1,54 @@
+    <?php
+        session_start();
+        if (isset($_GET['cNome']) && $_GET['cNome'] != ''){
+
+            $contato = array();
+
+            $contato['nome'] = $_GET['cNome'];
+
+            if(isset($_GET['cDescricao'])){
+                $contato['descricao'] = $_GET['cDescricao'];
+            }
+            else{
+                $contato['descricao'] = '';
+            }
+
+            if(isset($_GET['cData'])){
+                $contato['data'] = $_GET['cData'];
+            }
+            else{
+                $contato['data'] = '';
+            }
+
+            if(isset($_GET['cTel'])){
+                $contato['telefone'] = $_GET['cTel'];
+            }
+            else{
+                $contato['cTel'] = '';
+            }
+
+            if(isset($_GET['cMail'])){
+                $contato['email'] = $_GET['cMail'];
+            }
+            else{
+                $contato['email'] = '';
+            }
+
+            if(isset($_GET['cFavorito'])){
+                $contato['favorito'] = $_GET['cFavorito'];
+            }
+            else{
+                $contato['favorito'] = '';
+            }
+
+            $_SESSION['lista_nomes'][] = $contato;
+        }
+
+        if(isset($_SESSION['lista_nomes'])){
+            $lista_nomes = $_SESSION['lista_nomes'];
+        }
+        else{
+            $lista_nomes = array();
+        }
+        include "template-contato.php";
+    ?>
