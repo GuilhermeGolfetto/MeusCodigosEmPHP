@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Arrays Associativos</title>
+  </head>
+  <body>
+    <p>
+      <?php
+        // Esse é um array que usa inteiros como índices...
+        $myArray = array(2012, 'blue', 5);
+
+        // ...e esse é um array associativo:
+        $myAssocArray = array('year' => 2012,
+                        'colour' => 'blue',
+                        'doors' => 5);
+            
+        // Esse código vai exibir "blue"...
+        echo $myArray[1];
+        echo '<br />';
+            
+        // ... e esse também vai exibir "blue"!
+        echo $myAssocArray['colour'];
+      ?>
+    </p>
+  </body>
+</html>
