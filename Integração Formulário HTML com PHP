@@ -1,0 +1,12 @@
+NO HTML5 a gente criar o formulário
+
+     <form  method="get" action="dados.php"/>
+               <input type="text" name="v"/>
+               <input type="submit" value="Enviar"/>              
+      </form>
+
+
+
+NO PHP a gente vai pegar o enviado
+
+     $dados = $_GET["v"];
