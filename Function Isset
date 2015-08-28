@@ -1,0 +1,5 @@
+Usada para verificar se algo já foi configurado, necessário uso de ternário
+
+$nome=isset($_GET["nome"])?$_GET["nome"]:"Erro404";
+
+verificar se a variável nome já tem valor, se não tiver, mostrar a mensagem erro404
