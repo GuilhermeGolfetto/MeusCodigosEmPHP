@@ -1,0 +1,22 @@
+Ele é usado de maneira semelhante ao comando se (if)
+
+sua sintaxe é assim:
+
+     expressão?verdadeiro:falso
+
+exemplo:
+
+$r = $a > $b ? $a+$b : $a-$b
+
+ou seja
+
+    if($a>$b){
+          $r=$a+$b;
+}
+else{
+          $r=$a-$b;
+}
+a variável $r vai receber o valor ($a+$b) se $a>$b
+
+
+$sit=$m<7?"recuperação":"aprovado"
