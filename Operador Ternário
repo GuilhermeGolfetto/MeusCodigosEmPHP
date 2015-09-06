@@ -18,5 +18,19 @@ else{
 }
 a variável $r vai receber o valor ($a+$b) se $a>$b
 
+EXEMPLO PRATICO
+<?php
+     $idade = $_GET['idade'];
+     if($idade >= 18){
+          echo "Bem Vindo!";
+     }     
+     else{
+          echo "Entrada Proibida!";
+     }     
+Agora usando ternário:
 
-$sit=$m<7?"recuperação":"aprovado"
+$idade = $_GET['idade'];
+
+echo ($idade > 18) ? "Bem Vindo!" : "Entrada Proibida!";
+          
+          
