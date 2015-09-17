@@ -1,0 +1,20 @@
+<?php
+
+$nome = 'Guilherme';
+//heredoc
+$heredoc = <<<MEUTEXTO
+$nome Meu texto aqui sem conflitar com aspas 'simples' ou aspas "Duplas".
+exemplo " " " ' ' '
+MEUTEXTO;
+
+//nodoc
+$nowdoc = <<<'OUTROTEXTO'
+$nome Meu texto aqui sem conflitar com aspas 'simples' ou aspas "Duplas".
+exemplo " " " ' ' '
+OUTROTEXTO;
+
+
+echo $heredoc;
+echo "<br>";
+echo "<br>";
+echo $nowdoc;
