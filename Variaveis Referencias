@@ -1,0 +1,25 @@
+<?php
+
+$a = 5;
+$b =& $a; //$b referencia $a
+//Se o $a mudar, $b vai mudar também
+
+//Imprimindo $b
+var_dump($b);
+
+$a =25;
+
+var_dump($b);
+
+//Usando Funções por referencia
+
+function foo(&$var){
+	$var++;
+	var_dump($var);
+}
+
+$valor = 9;
+
+foo($valor);
+
+var_dump($valor);
