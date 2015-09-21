@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Eu sou o Rei dos Arrays!</title>
+  </head>
+  <body>
+    <p>
+      <?php
+      // Na linha abaixo, crie seu próprio array associativo:
+        $myArray = array ('year' => 2012,
+                        'colour' => 'blue',
+                        'doors' => 5,
+                        'make' => 'BMW');
+
+      // Na linha abaixo, exiba um dos valores:
+        echo "Ano: " . $myArray['year']. "<br>";
+          
+      // Na linha abaixo, faça iterações no array e exiba
+      // *todos* os valores na tela:
+        $lenght = count($myArray);
+        
+        foreach($myArray as $valor){
+            echo $valor . "<br>";    
+        }
+      ?>
+    </p>
+  </body>
+</html>
