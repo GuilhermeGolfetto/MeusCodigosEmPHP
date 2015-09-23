@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Introdução à Programação Orientada a Objetos </title>
+      <link type='text/css' rel='stylesheet' href='style.css'/>
+    </head>
+	<body>
+      <p>
+      <?php
+        // O código abaixo cria a classe
+        class Person {
+            // Criando algumas propriedades (variáveis ligadas a um objeto)
+            public $isAlive = true;
+            public $firstname;
+            public $lastname;
+            public $age;
+            
+            // Atribuindo os valores
+            public function __construct($firstname, $lastname, $age) {
+              $this->firstname = $firstname;
+              $this->lastname = $lastname;
+              $this->age = $age;
+            }
+            
+            // Criando um método (função ligada a um objeto)
+            public function greet() {
+              return "Olá, meu nome é " . $this->firstname . " " . $this->lastname . ". É um prazer conhecê-lo! :-)";
+            }
+          }
+          
+        // Criando uma nova pessoa chamada "entediado 12345", que tem 12345 anos ;-)
+        $me = new Person('entediado', '12345', 12345);
+        
+        // Imprimindo o retorno do método greet
+        echo $me->greet(); 
+        ?>
+        </p>
+    </body>
+</html>
