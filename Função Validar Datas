@@ -1,0 +1,23 @@
+<?php
+//Desenvolvido por Guilherme Golfetto
+function valida_data($data){
+	//expressão Regular
+	$padrao = '/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$';
+	
+	$resultado = preg_match($padrao, $data);
+	
+	if(! $resultado){
+		//se não existir resultado valido
+		return false;
+	}
+	
+	$dados = explode("/",$data);
+	$dia = $dados[0];
+	$mes = $dados[1];
+	$ano = $dados[2];
+	
+	$resultado = checkdate($mes,$dia,$ano);
+	//verificar de existe datas validas
+	
+	return $resultado;
+}
