@@ -1,0 +1,29 @@
+function enviar_email($tarefa,$anexos = array()){
+        //precisa estar com a biblioteca PHPMailer ativada.
+        $corpo = preparar_corpo_email($tarefa,$anexos);
+        $email = new PHPMailer(); //Criação do Objetos
+        //Acessar o sistema de e-mails;
+        $email->isSMTP();
+        $email->Host = "smpt.gmail.com";
+        $email->Port = 587;
+        $email->SMTPSecure = 'tls';
+        $email->SMTPAuth = true;
+        //Fazer a autenticação de usuário e senha;
+        $email->Username = 'algumacoisa@gmail.com';
+        $email->Password = 'umasenha';
+        $email->setFrom("algumacoisa@gmail.com", "Avisador de Tarefas");
+        //Digitar o email do destinatário;
+        $email->addAddress(EMAIL_NOTIFICACAO);
+        //Usar a opção para escrever um e-mail;
+        //Digitar o assunto do e-mail;
+        $email->Subject = "Aviso de Tarefas : {$tarefa['nome']}";
+        //Escrever o corpo do e-mail;
+        $corpo = preparar_corpo_email($tarefa, $anexos);
+        $email->msgHTML($corpo);
+        //Adicionar os anexos quando necessário;
+        foreach ($anexos as $anexo){
+            $email->addAttachment("anexos/{$anexo['arquivo']}");
+        }
+        //Usar a opção de enviar o e-mail.
+        $email->send();
+    }
