@@ -1,0 +1,43 @@
+<?php
+
+$alunos = [
+    [
+        'id' => 1,
+        'nome' => 'Pedro',
+        'cidade' => 'São Paulo'
+
+    ],
+    [
+        'id' => 2,
+        'nome' => 'Ana',
+        'cidade' => 'Sãi Paulo'
+    ],
+    [
+        'id' => 3,
+        'nome' => 'Marcos',
+        'cidade' => 'Curitiba'
+    ],
+    [
+        'id' => 4,
+        'nome' => 'Carla',
+        'cidade' => 'Recife'
+    ]
+];
+
+$dom = new DOMDocument('1.0','UTF-8');
+$escola = $dom->createElement('escola');
+
+foreach($alunos as $aluno){
+    settype($aluno, 'object');
+    $alunotag = $dom->createElement('aluno'); //tag aluno
+    $alunotag->setAttribute('id',$aluno->id);
+    $alunotag->appendChild($dom->createElement('nome',$aluno->nome)); //tag filha
+    $alunotag->appendChild($dom->createElement('cidade',$aluno->cidade));//tag filha
+    $escola->appendChild($alunotag); //colocar a tag aluno dentro da tag principal
+}
+
+$dom->appendChild($escola); //agora ela é a tag principal do XML
+$dom->formatOutput = true; //corrigir identação
+
+$dom->save('alunos.xml');
+
