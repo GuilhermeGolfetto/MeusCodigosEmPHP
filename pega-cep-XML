@@ -1,0 +1,12 @@
+<?php
+
+$cep = $_GET['cep'];
+
+$xml = file_get_contents("http://api.postmon.com.br/v1/cep/$cep?format=xml");
+
+$end = new simpleXMLElement($xml);
+
+echo 'Logradouro:' . $end->logradouro;
+echo '<br>Bairro:' . $end->bairro;
+echo '<br>Cidade:' . $end->cidade;
+echo '<br>Estado:' . $end->estado;
