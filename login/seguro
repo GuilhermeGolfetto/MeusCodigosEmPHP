@@ -1,0 +1,23 @@
+<?php
+
+
+//todas as informações da sessão da outra pagina vem para cá
+session_start();
+
+//valida se o usuario está realmente logado
+if(! isset($_SESSION['logado'])){
+    //se a variavel logado que identifica um usuario no loing não existir ela Volta para o login
+    header('Location: login.php');
+
+    exit;
+}
+
+//Logout
+if(isset($_GET['acao']) && $_GET['acao'] === 'logout'){
+    //destroi todos os dados da sessao
+    session_start();
+    //redireciona o usuario para o formulario de login
+    header('Location: login.php');
+}
+
+?>
