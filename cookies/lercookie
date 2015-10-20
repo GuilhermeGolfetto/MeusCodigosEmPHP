@@ -1,0 +1,7 @@
+<?php
+
+if(isset($_COOKIE['email'])){
+    echo $_COOKIE['nome']. '<br>';
+    echo $_COOKIE['email'] . '<br>';
+    echo $_COOKIE['telefone'] . '<br>';
+}
