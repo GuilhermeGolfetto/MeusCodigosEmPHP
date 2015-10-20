@@ -1,0 +1,19 @@
+<?php
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //funcão para criar cookie que recebe como parametro: nome, valor do cookie(em string)  , tempo de expiracao
+    setcookie('email','carlos@teste.com',strtotime('+4 hours'));
+    setcookie('nome','carlos Vilagran',strtotime('+4 hours'));
+    setcookie('telefone','11 4444-4444',strtotime('+4 hours'));
+}
+?>
+<html>
+    <head>
+        <title>Cookies em PHP</title>
+    </head>
+    <body>
+        <form method="post">
+            <button>Gravar cookie</button>
+        </form>
+    </body>
+</html>
