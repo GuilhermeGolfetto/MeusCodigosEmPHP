@@ -1,0 +1,19 @@
+<?php
+
+//inicia a sessão
+session_start();
+
+//verifica se o formulario foi posta
+if($_POST){
+    //Os dados de login conferem?
+    if($_POST['email'] === 'teste@site.com.br' && $_POST['senha'] === '123'){
+        //Cria uma sessão que identifica se o usuario efetuou o login
+        $_SESSION['logado'] = true;
+        //Armazena na sessao o e-mail do usuario logad
+        $_SESSION['email'] = $_POST['email'];
+        //Redireciona o usuario para a página 'segura'
+        header('Location: seguro.php');
+    }
+}
+
+?>
