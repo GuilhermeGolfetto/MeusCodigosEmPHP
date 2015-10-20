@@ -1,0 +1,7 @@
+<?php
+
+setcookie('nome',''); //destroi o cookie
+setcookie('email','');
+
+header('Location: lecookie.php');
+?>
